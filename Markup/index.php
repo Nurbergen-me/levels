@@ -37,18 +37,18 @@
 								['id' => 3, 'name' => 'Jane Doe', 'email' => 'jane@example.com']
 							];
 
-							foreach($data as $user) {
-								echo "<tr>
-											<td>$user[id]</td>
-											<td>$user[name]</td>
-											<td>$user[email]</td>
-											<td>
-												<a href=\"edit.html?id=$user[id]\" class=\"btn btn-warning\">Edit</a>
-												<a href=\"?id=$user[id]\" onclick=\"return confirm('are you sure?')\" class=\"btn btn-danger\">Delete</a>
-											</td>
-										</tr>";
-							}
-						 ?>
+							foreach($data as $user):
+						?>
+							<tr>
+								<td><?= $user['id']; ?></td>
+								<td><?= $user['name']; ?></td>
+								<td><?= $user['email']; ?></td>
+								<td>
+									<a href="edit.html?id=<?= $user['id']; ?>" class="btn btn-warning">Edit</a>
+									<a href="?id=<?= $user['id']; ?>" onclick="return confirm('are you sure?')" class="btn btn-danger">Delete</a>
+								</td>
+							</tr>
+						<?php endforeach; ?>
 					</tbody>
 				</table>
 			</div>
