@@ -26,16 +26,11 @@
 					<tbody>
 						<?php 
 
-							//Создать массив с данными
-							//Использовать цикл foreach для table row
-							//Вставить данные из массива
-							//Использовать echo для вывода на экран
+							$pdo = new PDO('mysql:host=localhost;dbname=management;charset=utf8', 'root', '');
 
-							$data = [
-								['id' => 1, 'name' => 'John Doe', 'email' => 'john@example.com'],
-								['id' => 2, 'name' => 'Joseph Doe', 'email' => 'joseph@example.com'],
-								['id' => 3, 'name' => 'Jane Doe', 'email' => 'jane@example.com']
-							];
+							$sql ="SELECT * FROM users";
+							$statement =$pdo ->query($sql);
+							$data = $statement ->fetchAll(PDO::FETCH_ASSOC);
 
 							foreach($data as $user):
 						?>
