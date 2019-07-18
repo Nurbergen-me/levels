@@ -25,6 +25,12 @@
 
 					<tbody>
 						<?php 
+
+							//Создать массив с данными
+							//Использовать цикл foreach для table row
+							//Вставить данные из массива
+							//Использовать echo для вывода на экран
+
 							$data = [
 								['id' => 1, 'name' => 'John Doe', 'email' => 'john@example.com'],
 								['id' => 2, 'name' => 'Joseph Doe', 'email' => 'joseph@example.com'],
