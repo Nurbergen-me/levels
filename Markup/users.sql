@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июл 18 2019 г., 09:51
+-- Время создания: Июл 19 2019 г., 18:43
 -- Версия сервера: 5.6.41
 -- Версия PHP: 7.2.10
 
@@ -32,6 +32,7 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
+  `newFileName` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -39,10 +40,14 @@ CREATE TABLE `users` (
 -- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`) VALUES
-(1, 'John Doe', 'john@example.com', '123'),
-(3, 'Joseph Doe', 'joseph@example.com', '1234'),
-(11, 'Jane Doe', 'jane@example.com', '12345');
+INSERT INTO `users` (`id`, `name`, `email`, `newFileName`, `password`) VALUES
+(1, 'John Doe', 'john@example.com', '', '123'),
+(3, 'Joseph Doe', 'joseph@example.com', '', '1234'),
+(11, 'Jane Doe', 'jane@example.com', '', '12345'),
+(26, 'Дмитрий', 'dima@mail.ru', '', '123'),
+(37, 'Петр', 'petya@mail.ru', '5d31d46c77bad.mp3', '123'),
+(52, 'Николай', 'kolya@mail.ru', '', '123'),
+(53, 'Петр', 'petya@mail.ru', '', '202cb962ac59075b964b07152d234b70');
 
 --
 -- Индексы сохранённых таблиц
@@ -62,7 +67,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
