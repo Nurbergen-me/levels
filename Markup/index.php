@@ -11,7 +11,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<h1>User management</h1>
-				<a href="create.html" class="btn btn-success">Add User</a>
+				<a href="create.php" class="btn btn-success">Add User</a>
 				
 				<table class="table">
 					<thead>
@@ -19,6 +19,7 @@
 							<th>ID</th>
 							<th>Username</th>
 							<th>Email</th>
+							<th>File name</th>
 							<th>Actions</th>
 						</tr>
 					</thead>
@@ -38,6 +39,7 @@
 								<td><?= $user['id']; ?></td>
 								<td><?= $user['name']; ?></td>
 								<td><?= $user['email']; ?></td>
+								<td><?= $user['newFileName']; ?></td>
 								<td>
 									<a href="edit.html?id=<?= $user['id']; ?>" class="btn btn-warning">Edit</a>
 									<a href="?id=<?= $user['id']; ?>" onclick="return confirm('are you sure?')" class="btn btn-danger">Delete</a>
