@@ -5,6 +5,9 @@
 
 	if(isset($_GET['id'])) {
 		$id = $_GET['id'];
+		$newFileName = $_GET['newFileName'];
+
+		unlink("uploads/$newFileName");
 
 		$sql ="DELETE FROM users WHERE id='$id'";
 		$pdo ->query($sql);
@@ -55,7 +58,7 @@
 								<td><?= $user['newFileName']; ?></td>
 								<td>
 									<a href="edit.php?id=<?= $user['id']. '&newFileName=' .$user['newFileName']; ?>" class="btn btn-warning">Edit</a>
-									<a href="?id=<?= $user['id']; ?>" onclick="return confirm('are you sure?')" class="btn btn-danger">Delete</a>
+									<a href="?id=<?= $user['id']. '&newFileName=' .$user['newFileName']; ?>" onclick="return confirm('are you sure?')" class="btn btn-danger">Delete</a>
 								</td>
 							</tr>
 						<?php endforeach; ?>
