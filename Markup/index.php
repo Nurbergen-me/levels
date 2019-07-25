@@ -1,3 +1,17 @@
+<?php 
+
+	$pdo = new PDO('mysql:host=localhost;dbname=management;charset=utf8', 'root', '');
+
+
+	if(isset($_GET['id'])) {
+		$id = $_GET['id'];
+
+		$sql ="DELETE FROM users WHERE id='$id'";
+		$pdo ->query($sql);
+	}
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +41,6 @@
 					<tbody>
 						<?php 
 
-							$pdo = new PDO('mysql:host=localhost;dbname=management;charset=utf8', 'root', '');
 
 							$sql ="SELECT * FROM users";
 							$statement =$pdo ->query($sql);
@@ -41,7 +54,7 @@
 								<td><?= $user['email']; ?></td>
 								<td><?= $user['newFileName']; ?></td>
 								<td>
-									<a href="edit.html?id=<?= $user['id']; ?>" class="btn btn-warning">Edit</a>
+									<a href="edit.php?id=<?= $user['id']. '&newFileName=' .$user['newFileName']; ?>" class="btn btn-warning">Edit</a>
 									<a href="?id=<?= $user['id']; ?>" onclick="return confirm('are you sure?')" class="btn btn-danger">Delete</a>
 								</td>
 							</tr>
