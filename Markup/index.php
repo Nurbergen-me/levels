@@ -7,10 +7,18 @@
 		$id = $_GET['id'];
 		$newFileName = $_GET['newFileName'];
 
-		unlink("uploads/$newFileName");
+		if(!empty($newFileName)) {
+			unlink("uploads/$newFileName");
+		};
+
 
 		$sql ="DELETE FROM users WHERE id='$id'";
+
 		$pdo ->query($sql);
+		// if(empty($data)) {
+		// 	header("Location: /404.php");
+
+		// };
 	}
 
  ?>

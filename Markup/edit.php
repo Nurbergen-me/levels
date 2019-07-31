@@ -66,6 +66,11 @@
 		$sql = "SELECT * FROM users WHERE id='$id'";
 		$statement = $pdo ->query($sql);
 		$data = $statement ->fetch(PDO::FETCH_ASSOC);
+
+		if(empty($data)) {
+			header("Location: /404.php");
+
+		};
 	}
 
  ?>
